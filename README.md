@@ -23,7 +23,7 @@ $: python main.py
 
 ```
 Starting Online-Faker in 10 seconds...
-You can quit the application pressing the ESC key.
+You can quit the application pressing the ESC or CTRL key.
 10
 9
 8
@@ -35,5 +35,5 @@ You can quit the application pressing the ESC key.
 2
 1
 Mouse started...
-Key.esc released. Quitting the application.
+ESC pressed. Quitting the application.
 ```

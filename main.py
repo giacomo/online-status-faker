@@ -12,7 +12,11 @@ class OnlineStatusFaker:
     def on_release(self, key):
         if key == keyboard.Key.esc:
             # Stop listener
-            print('{0} released. Quitting the application.'.format(key))
+            print('ESC pressed. Quitting the application.')
+            self.condition = False
+            return False
+        if key == keyboard.Key.ctrl:
+            print('CTRL pressed. Quitting the application.')
             self.condition = False
             return False
 
@@ -43,9 +47,10 @@ class OnlineStatusFaker:
             time.sleep(1)
 
     def __init__(self):
+        keyboard.Listener.stop
         mode = input('Choose mode: (m)ouse or (k)eyboard: ')
         print('Starting Online-Faker in {0} seconds...'.format(self.delay))
-        print('You can quit the application pressing the ESC key.')
+        print('You can quit the application pressing the ESC or CTRL key.')
         listener = keyboard.Listener(on_release=self.on_release)
         listener.start()
         self.delay_start()
