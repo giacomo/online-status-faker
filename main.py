@@ -43,6 +43,9 @@ class OnlineStatusFaker:
 
     def delay_start(self):
         for seq in range(self.delay):
+            if not self.condition:
+                print("Startup aborted.")
+                sys.exit(0)
             print(self.delay - seq)
             time.sleep(1)
 
